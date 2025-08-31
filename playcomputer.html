@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play with Computer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="title">Play with Computer</h1>
+
+  <!-- Scoreboard -->
+  <div id="scoreboard">
+    <span id="playerScore">You: 0</span> |
+    <span id="computerScore">Computer: 0</span>
+  </div>
+
+  <p id="status">Game Loading...</p>
+
+  <!-- Game Board -->
+  <div class="board" id="board"></div>
+
+  <!-- Control Buttons -->
+  <button class="btn" onclick="newGame()">New Game</button>
+  <button class="btn" onclick="window.location.href='index.html'">Back to Menu</button>
+
+  <script>
+    // Get mode from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const mode = urlParams.get('mode') || 'easy'; // easy, medium, hard
+
+    // Load the corresponding JS file
+    const script = document.createElement('script');
+    script.src = `js/${mode}.js`;
+    document.body.appendChild(script);
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play n Play</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Winning cells highlight */
+    .win {
+      background-color: gold !important;
+      color: black;
+      animation: flash 0.6s infinite alternate;
+    }
+    @keyframes flash {
+      from { background-color: gold; }
+      to { background-color: orange; }
+    }
+
+    /* Turn indicator blinking */
+    .turn {
+      font-weight: bold;
+      animation: blink 1s infinite;
+    }
+    @keyframes blink {
+      0% { color: white; }
+      50% { color: yellow; }
+      100% { color: white; }
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">Play n Play</h1>
+
+  <!-- Player Setup -->
+  <div id="playerSetup">
+    <input type="text" id="player1Name" placeholder="Player 1 Name" />
+    <input type="color" id="player1Color" value="#ff6b6b" title="Choose Player 1 Color">
+    <input type="text" id="player2Name" placeholder="Player 2 Name" />
+    <input type="color" id="player2Color" value="#28a745" title="Choose Player 2 Color">
+    <select id="player1Symbol">
+      <option value="X">X</option>
+      <option value="O">O</option>
+    </select>
+	<br>
+    <button class="btn" onclick="startGame()">Start Game</button>
+  </div>
+
+  <!-- Scoreboard -->
+  <div id="scoreboard" class="scoreboard" style="display:none;">
+    <span id="player1Score"></span> | <span id="player2Score"></span>
+  </div>
+
+  <!-- Turn Status -->
+  <p id="status" class="turn"></p>
+
+  <!-- Game Board -->
+  <div class="board" id="board"></div>
+
+  <!-- Buttons -->
+  <button class="btn" onclick="newGame()" style="display:none;" id="newBtn">New Game</button>
+  <button class="btn" onclick="backToMenu()">Back to Main Menu</button>
+
+  <script src="script.js"></script>
+</body>
+</html>

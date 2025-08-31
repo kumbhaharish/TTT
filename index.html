@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta charset="UTF-8">
+  <title>Main Menu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="title">🎮 Welcome to Tic Tac Toe 🎮</h1>
+
+  <div class="container">
+    <!-- 1st Box -->
+    <div class="box" onclick="alert('Room play & auto connect coming soon!')">
+      <h2>Play with Online Friends</h2>
+      <p>Room Play | Auto Connect</p>
+    </div>
+
+    <!-- 2nd Box: Computer Play -->
+   <div class="box computer-play">
+  <h2>Play with Computer</h2>
+  <div class="computer-buttons">
+    <button class="easy-btn" onclick="startComputerGame('easy')">Easy</button>
+    <button class="medium-btn" onclick="startComputerGame('medium')">Medium</button>
+    <button class="hard-btn" onclick="startComputerGame('hard')">Hard</button>
+  </div>
+</div>
+
+
+
+    <!-- 3rd Box -->
+    <div class="box" onclick="window.location.href='playnplay.html'">
+      <h2>Play n Play</h2>
+      <p>Ofline play with 2 players</p>
+    </div>
+  </div>
+
+  <script>
+    function startComputerGame(level){
+      // Redirect to playcomputer.html with mode
+      window.location.href = "playcomputer.html?mode=" + level;
+    }
+  </script>
+  
+  
+  
+  <!-- Scrolling credit at the bottom -->
+<div class="credit-ticker">
+  <p>"This Game Tic Tac Toe Created by Harsha Harish" more games coming soon, Thank You</p>
+</div>
+
+</body>
+</html>
